@@ -1,0 +1,48 @@
+GET http://localhost:4000/health
+
+### get all tickets
+GET http://localhost:4000/api/v1/tickets
+
+### input data
+POST http://localhost:4000/api/v1/tickets
+Content-Type: application/json
+
+{
+    "username" : "Niha",
+    "price" : 20
+}
+### bulk data input
+POST http://localhost:4000/api/v1/tickets/bulk
+Content-Type: application/json
+
+{
+    "username" : "Nomro",
+    "price" : 20,
+    "quantity": 5
+}
+
+### find tickets by id
+GET http://localhost:4000/api/v1/tickets/t/8CxkugeKQ
+
+### find ticket by username
+GET http://localhost:4000/api/v1/tickets/u/Niha
+
+
+### delete ticket by id //{Dosen't work}
+DELETE http://localhost:4000/api/v1/tickets/t/hrPOMtuYL
+
+### delete ticket by username
+DELETE http://localhost:4000/api/v1/tickets/u/Rakib
+
+### update ticket by ID or username
+PUT http://localhost:4000/api/v1/tickets/u/Rakib
+Content-Type: application/json
+
+{
+    "username": "Rakibul Islam"
+}
+
+### Draw winners
+
+GET http://localhost:4000/api/v1/tickets/draw?wc=1
+
